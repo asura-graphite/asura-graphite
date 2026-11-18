@@ -1,9 +1,9 @@
 -- Detect automatically resolution and scale from monitor
 -- 1st Display
 hl.monitor({
-	output = "DP-3",
-	mode = "1920x1080@165",
-	position = "0x0",
+	output = "eDP-1",
+	mode = "1920x1080@60",
+	position = "1920x0",
 	scale = 1,
 })
 
@@ -11,7 +11,7 @@ hl.monitor({
 hl.monitor({
 	output = "HDMI-A-1",
 	mode = "1920x1080@75",
-	position = "1920x0",
+	position = "0x0",
 	scale = 1,
 })
 
@@ -88,6 +88,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("swaybg -i ~/Pictures/Wallpapers/wallpaper-1.png -m fill")
 	hl.exec_cmd("swaync")
 end)
+
+-- Move workspaces between the laptop and external display when the lid changes.
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("~/.dotfiles/bin/lid-monitor.sh close"))
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("~/.dotfiles/bin/lid-monitor.sh open"))
 
 local mod = "SUPER"
 local magic = "CTRL + SHIFT"
