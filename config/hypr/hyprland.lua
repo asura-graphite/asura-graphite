@@ -71,7 +71,9 @@ hl.config({
 		},
 	},
 	input = {
-		kb_layout = "us",
+		-- Switch between US and Latin American layouts with Alt + Shift
+		kb_layout = "us,latam",
+		kb_options = "grp:alt_shift_toggle",
 		follow_mouse = 1,
 	},
 	misc = {
