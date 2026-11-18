@@ -21,16 +21,21 @@ Es un tema en desarrollo, no una distribución de escritorio ni un instalador au
 | --- | --- |
 | Hyprland | Gestión de ventanas, estilo y atajos |
 | Hyprlock | Apariencia a juego para el bloqueo de pantalla |
+| Waybar y SwayNC | Barra de estado y estilo de notificaciones |
+| Rofi | Lanzador y selector de ventanas |
+| Ghostty y Starship | Apariencia de la terminal y el prompt |
+| Ronema | Temas Graphite para el menú de red |
+| Satty y Wlogout | Configuración de capturas y menú de energía |
 
 ## Estructura
 
 ```text
-config/hypr/  Configuración de Hyprland y Hyprlock
+config/       Configuraciones del escritorio y temas Graphite
 ```
 
 ## Antes de usar
 
-Revisa los archivos antes de aplicarlos. Los nombres de monitor, la pantalla de Hyprlock, las rutas del fondo, las fuentes, las versiones y los ajustes de hardware pueden variar entre equipos. El fondo mencionado y las configuraciones de otras aplicaciones no están incluidos. Respalda tus configuraciones existentes antes de reemplazarlas con enlaces simbólicos.
+Revisa los archivos antes de aplicarlos. Los nombres de monitor, la pantalla de Hyprlock, las rutas del fondo, las fuentes, las versiones y los ajustes de hardware pueden variar entre equipos. El fondo y el programa y recursos de Ronema no están incluidos. Respalda tus configuraciones existentes antes de reemplazarlas con enlaces simbólicos.
 
 Esta configuración usa el formato Lua de Hyprland; comprueba que tu versión lo soporte.
 

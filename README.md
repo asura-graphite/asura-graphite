@@ -21,16 +21,21 @@ This is an evolving theme, not a complete desktop distribution or an automated i
 | --- | --- |
 | Hyprland | Window management, styling, and shortcuts |
 | Hyprlock | Matching screen-lock appearance |
+| Waybar and SwayNC | Status bar and notification styling |
+| Rofi | Application launcher and window switcher |
+| Ghostty and Starship | Terminal and prompt appearance |
+| Ronema | Graphite themes for the network menu |
+| Satty and Wlogout | Screenshot and power-menu configuration |
 
 ## Repository layout
 
 ```text
-config/hypr/  Hyprland and Hyprlock configuration
+config/       Desktop application configuration and Graphite themes
 ```
 
 ## Before using
 
-Review the files before applying them. Monitor names, the Hyprlock display, wallpaper paths, fonts, package versions, and hardware-specific settings may differ across systems. The referenced wallpaper and other application configurations are not included. Back up existing configurations before replacing them with symbolic links.
+Review the files before applying them. Monitor names, the Hyprlock display, wallpaper paths, fonts, package versions, and hardware-specific settings may differ across systems. The referenced wallpaper and Ronema program and resources are not included. Back up existing configurations before replacing them with symbolic links.
 
 This configuration uses Hyprland's Lua configuration format. Check that your Hyprland version supports it.
 

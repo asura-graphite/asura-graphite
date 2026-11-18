@@ -1,0 +1,99 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 38,
+	"spacing": 6,
+	"reload_style_on_change": true,
+	"modules-left": ["hyprland/workspaces"],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"network",
+		"bluetooth",
+		"pulseaudio",
+		"tray",
+		"temperature",
+		"custom/notification",
+		"custom/power"
+	],
+	"hyprland/workspaces": {
+		"format": "{name}",
+		"sort-by-number": true,
+		"all-outputs": false
+	},
+	"clock": {
+		"interval": 60,
+		"format": "  {:%a %d - %H:%M}",
+		"format-alt": "  {:%A %d %B %Y · %H:%M}"
+	},
+	"cpu": {
+		"interval": 2,
+		"format": "  CPU {usage}%",
+		"tooltip": true
+	},
+	"memory": {
+		"interval": 5,
+		"format": "  RAM {percentage}%",
+		"tooltip": true
+	},
+	"network": {
+		"interval": 3,
+		"format-wifi": "  Wi-Fi: {signalStrength}%",
+		"format-ethernet": "󰈀 Ethernet",
+		"format-disconnected": "Disconnected",
+		"tooltip": true,
+		"on-click": "ronema",
+		"tooltip-format": "{ifname}: {ipaddr}"
+	},
+	"bluetooth": {
+		"format-on": "󰂯 Bluetooth",
+		"format-off": "󰂲 Bluetooth",
+		"format-disabled": "󰂲 Bluetooth",
+		"format-connected": "󰂱 {num_connections}",
+		"format-no-controller": "",
+		"tooltip-format": "Bluetooth: {status}",
+		"tooltip-format-connected": "Conectado: {device_alias}",
+		"on-click": "blueman-manager"
+	},
+	"pulseaudio": {
+    		"format": "󰗅  VOL {volume}%",
+    		"format-muted": "MUTE",
+    		"on-click": "pavucontrol"
+	},
+	"tray": {
+    		"spacing": 8
+	},
+	"custom/notification": {
+		"exec": "swaync-client -swb",
+		"return-type": "json",
+		"format": "{icon}",
+		"tooltip-format": "Notificaciones",
+		"on-click": "swaync-client -t",
+		"on-click-right": "swaync-client -d",
+		"format-icons": {
+			"notification": "󰂚",
+      "none": "󰂜",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󰂚",
+      "inhibited-none": "󰂜",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰂛"
+		}
+	},
+	"custom/power": {
+		"format": "  ",
+		"tooltip": true,
+		"tooltip-format": "Power menu",
+		"on-click": "~/.config/graphite-power/power.sh"
+	},
+	"temperature": {
+		"interval": 5,
+		"format": " {temperatureC}°C",
+		"critical-threshold": 85,
+		"format-critical": " TEMP {temperatureC}°C"
+	}
+}

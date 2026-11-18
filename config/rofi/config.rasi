@@ -1,0 +1,15 @@
+configuration {
+    modi: "drun,run,window";
+
+    show-icons: true;
+
+    icon-theme: "Papirus";
+
+    case-sensitive: false;
+
+    display-drun: "Apps";
+    display-run: "Comandos";
+    display-window: "Ventanas";
+}
+
+@theme "graphite"

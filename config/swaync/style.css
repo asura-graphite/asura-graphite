@@ -1,0 +1,287 @@
+
+/* Global */
+
+* {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 13px;
+    color: #d8dadd;
+}
+
+/* Shared Notifications */
+
+.notification-row {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.notification-background {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.notification-background .notification {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.notification-default-action {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.notification-default-action:hover,
+.notification-default-action:active {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.notification-content {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 12px;
+}
+
+.summary {
+    color: #e2e3e5;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.body {
+    color: #a7abb1;
+    font-size: 12px;
+}
+
+.time {
+    color: #858a91;
+    font-size: 11px;
+}
+
+/* Notification Buttons */
+
+.close-button {
+    background: #303338;
+    color: #d8dadd;
+    border: none;
+    border-radius: 7px;
+    box-shadow: none;
+}
+
+.close-button:hover {
+    background: #41454a;
+}
+
+.notification-action {
+    background: #303338;
+    color: #d8dadd;
+    border: none;
+    border-radius: 7px;
+    box-shadow: none;
+    margin: 4px;
+    padding: 8px;
+}
+
+.notification-action:hover {
+    background: #41454a;
+}
+
+/* Control Center */
+
+.control-center {
+    background: #17191c;
+    border: 1px solid #41454a;
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 12px;
+}
+
+.control-center .widget-title {
+    margin: 6px;
+}
+
+.control-center .widget-title > label {
+    color: #e2e3e5;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.control-center .widget-title button {
+    background: #303338;
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 7px 12px;
+}
+
+.control-center .widget-title button:hover {
+    background: #41454a;
+}
+
+/* Control Center Notifications */
+
+.control-center .notification-row {
+    margin: 0;
+    padding: 0;
+}
+
+.control-center .notification-background {
+    background: #24262a;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    margin: 5px 2px;
+}
+
+.control-center .notification {
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.control-center .notification-default-action {
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.control-center .notification-background:hover {
+    background: #2b2e32;
+}
+
+/* Notification Groups */
+
+.control-center .notification-group {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-top: 8px;
+}
+
+.control-center .notification-group-headers,
+.control-center .notification-group-icon {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Do Not Disturb */
+
+.control-center .widget-dnd {
+    background: #24262a;
+    border: none;
+    border-radius: 10px;
+    margin: 6px;
+    padding: 10px;
+}
+
+.control-center .widget-dnd switch {
+    background: #41454a;
+    border: none;
+    border-radius: 20px;
+    box-shadow: none;
+    min-width: 42px;
+    min-height: 22px;
+}
+
+.control-center .widget-dnd switch:checked {
+    background: #717781;
+}
+
+.control-center .widget-dnd switch slider {
+    background: #e2e3e5;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+/* Scrollbar */
+
+.control-center scrollbar {
+    background: transparent;
+}
+
+.control-center scrollbar slider {
+    background: #41454a;
+    border-radius: 8px;
+    min-width: 5px;
+    min-height: 5px;
+}
+
+.control-center scrollbar slider:hover {
+    background: #555a61;
+}
+
+/* Floating Notifications */
+
+.floating-notifications .notification-row {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.floating-notifications .notification-background {
+    background: #191b1e;
+    border: 1px solid #41454a;
+    border-radius: 12px;
+    box-shadow: none;
+    margin: 8px;
+    padding: 0;
+}
+
+.floating-notifications .notification {
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.floating-notifications .notification-default-action {
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.floating-notifications .notification-content {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 12px;
+}
+
+.floating-notifications .notification-content .image {
+    -gtk-icon-size: 48px;
+    margin-right: 12px;
+}
+
+.floating-notifications .notification-content .app-icon {
+    -gtk-icon-size: 24px;
+}
+
+.floating-notifications .summary {
+    color: #e2e3e5;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.floating-notifications .body {
+    color: #a7abb1;
+    font-size: 12px;
+}
+

@@ -1,0 +1,80 @@
+/* Global */
+
+* {
+  font-family: "JetBrainsMono Nerd Font Mono";
+  box-shadow: none;
+  background-image: none;
+}
+
+/* Window */
+
+window {
+  background-color: rgba(13, 14, 16, 0.94);
+}
+
+/* Buttons */
+
+button {
+  background-color: #24262a;
+  color: #d8dadd;
+  font-family: "JetBrainsMono Nerd Font Mono";
+  border: 1px solid #41454a;
+  border-radius: 12px;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  margin: 6px;
+  padding: 10px;
+}
+
+/* States */
+
+button:hover,
+button:focus {
+  background-color: #34373d;
+  border-color: #717781;
+  outline-style: none;
+}
+
+button:active {
+  background-color: #41454a;
+}
+
+/* Lock */
+
+#lock {
+  color: #91a7c2;
+}
+
+/* Logout */
+
+#logout {
+  color: #c5c7cb;
+}
+
+/* Reboot */
+
+#reboot {
+  color: #d5ad78;
+}
+
+/* Shutdown */
+
+#shutdown {
+  color: #c47777;
+}
+
+/* Debug */
+
+button {
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 24px;
+    font-family: "JetBrainsMono Nerd Font Mono";
+}
+
+button label {
+    color: #ffffff;
+    font-size: 24px;
+}

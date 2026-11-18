@@ -1,0 +1,25 @@
+{
+    "label": "lock",
+    "action": "hyprlock",
+    "text": "󰌾\nBloquear",
+    "keybind": "l"
+},
+{
+    "label": "logout",
+    "action": "hyprctl dispatch exit",
+    "text": "󰍃\nSalir",
+    "keybind": "e"
+},
+{
+    "label": "reboot",
+    "action": "systemctl reboot",
+    "text": "󰜉\nReiniciar",
+    "keybind": "r"
+},
+{
+    "label": "shutdown",
+    "action": "systemctl poweroff",
+    "text": "󰐥\nApagar",
+    "keybind": "s"
+}
+
