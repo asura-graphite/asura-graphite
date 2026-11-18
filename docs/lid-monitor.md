@@ -4,9 +4,18 @@ Moves workspaces between the laptop panel (`eDP-1`) and the external display
 (`HDMI-A-1`) when Hyprland reports lid-switch events. The bindings are in
 `config/hypr/hyprland.lua`.
 
+Create the link used by the Hyprland bindings (adjust the source path if the
+repository is elsewhere):
+
 ```bash
-~/.dotfiles/bin/lid-monitor.sh close
-~/.dotfiles/bin/lid-monitor.sh open
+sudo ln -s "$HOME/.dotfiles/bin/lid-monitor.sh" /usr/local/bin/lid-monitor.sh
+```
+
+Then reload Hyprland with `hyprctl reload`. To test manually:
+
+```bash
+/usr/local/bin/lid-monitor.sh close
+/usr/local/bin/lid-monitor.sh open
 ```
 
 The only accepted arguments are `close` and `open`. The first saves the IDs of
