@@ -31,11 +31,14 @@ Es un tema en desarrollo, no una distribución de escritorio ni un instalador au
 
 ```text
 config/       Configuraciones del escritorio y temas Graphite
+bin/          Utilidades de escritorio personalizadas
 ```
 
 ## Antes de usar
 
-Revisa los archivos antes de aplicarlos. Los nombres de monitor, la pantalla de Hyprlock, las rutas del fondo, las fuentes, las versiones y los ajustes de hardware pueden variar entre equipos. El fondo y el programa y recursos de Ronema no están incluidos. Respalda tus configuraciones existentes antes de reemplazarlas con enlaces simbólicos.
+Revisa los archivos antes de aplicarlos. Los nombres de monitor, la pantalla de Hyprlock, las rutas del fondo, las fuentes, las versiones y los ajustes de hardware pueden variar entre equipos. El fondo mencionado no está incluido. Respalda tus configuraciones existentes antes de reemplazarlas con enlaces simbólicos.
+
+`bin/ronema` es una versión personalizada de [rofi-network-manager](https://github.com/P3rf/rofi-network-manager), de George Demesiotis. Su licencia MIT original se conserva en [RONEMA-LICENSE](RONEMA-LICENSE). Requiere NetworkManager, Rofi y su configuración en `config/ronema/`.
 
 Esta configuración usa el formato Lua de Hyprland; comprueba que tu versión lo soporte.
 

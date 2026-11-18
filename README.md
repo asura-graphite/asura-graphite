@@ -31,11 +31,14 @@ This is an evolving theme, not a complete desktop distribution or an automated i
 
 ```text
 config/       Desktop application configuration and Graphite themes
+bin/          Customized desktop utilities
 ```
 
 ## Before using
 
-Review the files before applying them. Monitor names, the Hyprlock display, wallpaper paths, fonts, package versions, and hardware-specific settings may differ across systems. The referenced wallpaper and Ronema program and resources are not included. Back up existing configurations before replacing them with symbolic links.
+Review the files before applying them. Monitor names, the Hyprlock display, wallpaper paths, fonts, package versions, and hardware-specific settings may differ across systems. The referenced wallpaper is not included. Back up existing configurations before replacing them with symbolic links.
+
+`bin/ronema` is a customized version of [rofi-network-manager](https://github.com/P3rf/rofi-network-manager) by George Demesiotis. Its original MIT license is preserved in [RONEMA-LICENSE](RONEMA-LICENSE). It requires NetworkManager, Rofi, and its configuration under `config/ronema/`.
 
 This configuration uses Hyprland's Lua configuration format. Check that your Hyprland version supports it.
 
