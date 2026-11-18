@@ -1,8 +1,19 @@
 # `bin/lid-monitor.sh`
 
-Moves workspaces between the laptop panel (`eDP-1`) and the external display
-(`HDMI-A-1`) when Hyprland reports lid-switch events. The bindings are in
-`config/hypr/hyprland.lua`.
+Moves workspaces between a laptop panel and an external display when Hyprland
+reports lid-switch events. The bindings are in `config/hypr/hyprland.lua`.
+Without a local configuration file, the script does nothing.
+
+On a laptop, copy the template and edit its two lines: the internal output
+first, then the external output. Find their names using `hyprctl monitors all`.
+The local file is ignored by Git; do not create it on machines that do not
+need this behavior.
+
+```bash
+cp ~/.config/hypr/lid-monitor.template.conf ~/.config/hypr/lid-monitor.local.conf
+```
+
+If `XDG_CONFIG_HOME` is set, use its `hypr` directory instead of `~/.config/hypr`.
 
 Create the link used by the Hyprland bindings (adjust the source path if the
 repository is elsewhere):
@@ -19,8 +30,9 @@ Then reload Hyprland with `hyprctl reload`. To test manually:
 ```
 
 The only accepted arguments are `close` and `open`. The first saves the IDs of
-workspaces on `eDP-1` and moves them to `HDMI-A-1`; the second moves the saved
-workspaces back after a one-second delay.
+workspaces on the configured internal display and moves them to the configured
+external display; the second moves the saved workspaces back after a one-second
+delay.
 
 ### Commands and options
 
@@ -40,7 +52,7 @@ workspaces back after a one-second delay.
   that JSON. `--arg` safely passes a shell value into the jq expression; `-e`
   returns a failing exit status if there is no match.
 - `hyprctl -j workspaces` lists workspaces. `jq -r` emits raw text rather than
-  JSON strings, selecting workspaces whose `.monitor` is `eDP-1` and printing
+  JSON strings, selecting workspaces on the configured internal output and printing
   their numeric `.id`.
 - `umask 077` makes the saved state file readable and writable only by its
   owner. The file contains workspace IDs, not passwords or other credentials.
@@ -59,8 +71,8 @@ workspaces back after a one-second delay.
 - `case` accepts only `close` and `open`; any other or missing argument exits
   with status `2`.
 
-The monitor names are machine-specific. Change both the script and the matching
-Hyprland bindings if your outputs have different names. If a workspace move
+The monitor names are machine-specific; change the local configuration if your
+outputs have different names. If a workspace move
 fails with a nonzero process status, `set -e` stops the script and leaves the
 state file for diagnosis. Some `hyprctl` errors may instead be printed as text
 with a successful process status; the script does not check the response text.

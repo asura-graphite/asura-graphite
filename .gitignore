@@ -4,3 +4,4 @@
 # Machine-specific monitor layout
 /config/hypr/monitors.local.lua
 /config/hypr/hyprlock.conf
+/config/hypr/lid-monitor.local.conf

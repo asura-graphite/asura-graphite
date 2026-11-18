@@ -5,6 +5,19 @@ set -euo pipefail
 
 # The caller passes "close" or "open" as the first argument.
 action="${1:-}"
+case "$action" in
+    close|open) ;;
+    *) exit 2 ;;
+esac
+
+# Two lines: laptop panel and external output. No local file means disabled.
+config_file="${XDG_CONFIG_HOME:-$HOME/.config}/hypr/lid-monitor.local.conf"
+[[ -f "$config_file" ]] || exit 0
+mapfile -t outputs <"$config_file"
+internal="${outputs[0]:-}"
+external="${outputs[1]:-}"
+# Restrict names before inserting them into a Lua dispatcher expression.
+[[ "$internal" =~ ^[a-zA-Z0-9._-]+$ && "$external" =~ ^[a-zA-Z0-9._-]+$ && "$internal" != "$external" ]] || exit 1
 # Keep the workspace IDs private and available only for this login session.
 state_file="${XDG_RUNTIME_DIR:-/tmp}/hypr-lid-workspaces-${UID}"
 
@@ -23,10 +36,10 @@ case "$action" in
         # Avoid overwriting the saved list if the close event fires more than once.
         [[ -e "$state_file" ]] && exit 0
         # Nothing can be moved if the external monitor is disconnected.
-        monitor_exists "HDMI-A-1" || exit 0
+        monitor_exists "$external" || exit 0
 
         # Save the workspaces currently on the laptop display before moving them.
-        workspaces="$(hyprctl -j workspaces | jq -r '.[] | select(.monitor == "eDP-1") | .id')"
+        workspaces="$(hyprctl -j workspaces | jq -r --arg monitor "$internal" '.[] | select(.monitor == $monitor) | .id')"
         [[ -n "$workspaces" ]] || exit 0
 
         # Restrict access because this file is runtime state for this user only.
@@ -34,7 +47,7 @@ case "$action" in
         printf '%s\n' "$workspaces" >"$state_file"
         while IFS= read -r workspace; do
             [[ -n "$workspace" ]] || continue
-            move_workspace "$workspace" "HDMI-A-1"
+            move_workspace "$workspace" "$external"
         done <<<"$workspaces"
         ;;
     open)
@@ -42,11 +55,11 @@ case "$action" in
         [[ -f "$state_file" ]] || exit 0
         # Give Hyprland time to re-enable the laptop display after the lid opens.
         sleep 1
-        monitor_exists "eDP-1" || exit 0
+        monitor_exists "$internal" || exit 0
 
         while IFS= read -r workspace; do
             [[ -n "$workspace" ]] || continue
-            move_workspace "$workspace" "eDP-1"
+            move_workspace "$workspace" "$internal"
         done <"$state_file"
         rm -f "$state_file"
         ;;
