@@ -115,7 +115,7 @@ hl.bind(mod .. " + C", hl.dsp.window.close())
 hl.bind(mod .. " + T", hl.dsp.layout("togglesplit"))
 
 -- Screenshot
-hl.bind(mod .. " + S", hl.dsp.exec_cmd("~/.config/satty/screenshot.sh"))
+hl.bind(mod .. " + S", hl.dsp.exec_cmd("screenshot.sh"))
 
 -- Display
 for i = 1, 9 do
