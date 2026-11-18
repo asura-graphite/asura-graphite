@@ -1,27 +1,13 @@
--- Detect automatically resolution and scale from monitor
--- 1st Display
-hl.monitor({
-	output = "eDP-1",
-	mode = "1920x1080@60",
-	position = "1920x0",
-	scale = 1,
-})
-
--- 2nd Display
-hl.monitor({
-	output = "HDMI-A-1",
-	mode = "1920x1080@75",
-	position = "0x0",
-	scale = 1,
-})
-
--- Default
-hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = 1,
-})
+-- Machine-specific monitor layout; see monitors.template.lua.
+local monitor_config = os.getenv("HOME") .. "/.config/hypr/monitors.local.lua"
+local monitor_file = io.open(monitor_config, "r")
+if monitor_file then
+	monitor_file:close()
+	dofile(monitor_config)
+else
+	-- Safe fallback on a fresh installation before the local file is created.
+	hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
+end
 
 hl.config({
 	general = {

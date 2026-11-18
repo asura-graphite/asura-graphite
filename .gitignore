@@ -1,0 +1,6 @@
+# Personal machine notes (not published with the dotfiles)
+/PERSONAL-NOTES.md
+
+# Machine-specific monitor layout
+/config/hypr/monitors.local.lua
+/config/hypr/hyprlock.conf
