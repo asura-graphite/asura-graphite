@@ -109,8 +109,23 @@ hl.bind(mod .. " + S", hl.dsp.exec_cmd("~/.dotfiles/config/satty/screenshot.sh")
 
 -- Laptop brightness keys use brightnessctl to change the backlight by 5%.
 -- Requires brightnessctl and a compatible backlight device.
+-- XF86MonBrightnessUp/Down are XKB names for dedicated brightness keys.
+-- https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h
+-- https://github.com/Hummer12007/brightnessctl
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
+
+-- Dedicated volume keys (XKB keysyms) and their actions:
+-- XF86AudioRaiseVolume: raise the default output by 5%, capped at 100%.
+-- XF86AudioLowerVolume: lower the default output by 5%.
+-- XF86AudioMute: toggle mute on the default output.
+-- wpctl controls WirePlumber/PipeWire: https://pipewire.pages.freedesktop.org/wireplumber/tools/wpctl.html
+-- Full keysym list (search for XF86Audio, XF86MonBrightness, etc.):
+-- https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h
+-- The list uses the XKB_KEY_ prefix; omit it in Hyprland bindings.
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"))
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"))
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 
 -- Display
 for i = 1, 9 do
