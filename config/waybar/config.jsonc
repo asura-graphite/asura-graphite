@@ -15,6 +15,7 @@
 		"hyprland/language",
 		"bluetooth",
 		"pulseaudio",
+		"battery",
 		"tray",
 		"temperature",
 		"custom/notification",
@@ -67,6 +68,19 @@
     		"format": "󰗅  VOL {volume}%",
     		"format-muted": "MUTE",
     		"on-click": "pavucontrol"
+	},
+	"battery": {
+		"interval": 30,
+		"states": {
+			"warning": 25,
+			"critical": 10
+		},
+		"format": "{icon}  {capacity}%",
+		"format-charging": "󰂄  {capacity}%",
+		"format-plugged": "󰚥  {capacity}%",
+		"format-full": "󰁹  {capacity}%",
+		"format-icons": ["󰁺", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
+		"tooltip-format": "Battery: {capacity}% · {timeTo}"
 	},
 	"tray": {
     		"spacing": 8

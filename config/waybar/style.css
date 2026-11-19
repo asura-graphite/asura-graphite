@@ -24,6 +24,7 @@ window#waybar {
 #network,
 #language,
 #bluetooth,
+#battery,
 #temperature,
 #pulseaudio,
 #tray {
@@ -73,8 +74,22 @@ window#waybar {
 #cpu,
 #memory,
 #network,
+#battery,
 #pulseaudio {
     color: #b0b4ba;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #aab9ad;
+}
+
+#battery.warning:not(.charging):not(.plugged) {
+    color: #c5ad82;
+}
+
+#battery.critical:not(.charging):not(.plugged) {
+    color: #d08a8a;
 }
 
 #network.disconnected {
