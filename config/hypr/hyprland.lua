@@ -61,6 +61,13 @@ hl.config({
 		kb_layout = "us,latam",
 		kb_options = "grp:alt_shift_toggle",
 		follow_mouse = 1,
+		-- Optional general pointer sensitivity: negative is slower, positive faster.
+		-- sensitivity = -0.3,
+		-- Optional touchpad settings:
+		-- touchpad = {
+		--     natural_scroll = true,
+		--     tap_to_click = true,
+		-- },
 	},
 	misc = {
 		force_default_wallpaper = 0,
