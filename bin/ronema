@@ -7,8 +7,16 @@ WIRED_INTERFACES=($(nmcli device | awk '$2=="ethernet" {print $1}'))
 WIRED_INTERFACES_PRODUCT=()
 VPN_PATTERN='(wireguard|vpn)'
 function initialization() {
-	source "$DIR/ronema.conf" || source "${XDG_CONFIG_HOME:-$HOME/.config}/ronema/ronema.conf" || exit
-	source "$DIR/languages/${LANGUAGE}.lang" || source "${XDG_CONFIG_HOME:-$HOME/.config}/ronema/languages/${LANGUAGE}.lang" || exit
+	if [[ -f "$DIR/ronema.conf" ]]; then
+		source "$DIR/ronema.conf" || exit
+	else
+		source "${XDG_CONFIG_HOME:-$HOME/.config}/ronema/ronema.conf" || exit
+	fi
+	if [[ -f "$DIR/languages/${LANGUAGE}.lang" ]]; then
+		source "$DIR/languages/${LANGUAGE}.lang" || exit
+	else
+		source "${XDG_CONFIG_HOME:-$HOME/.config}/ronema/languages/${LANGUAGE}.lang" || exit
+	fi
 	{ [[ -f "$DIR/themes/${THEME}" ]] && RASI_DIR="$DIR/themes/${THEME}"; } || { [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/ronema/themes/${THEME}" ]] && RASI_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/ronema/themes/${THEME}"; } || exit
 	{ [[ -d "$DIR/icons" ]] && ICON_DIR="$DIR/icons" ; } || { [[ -d "${XDG_CONFIG_HOME:-$HOME/.config}/ronema/icons" ]] && ICON_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/ronema/icons" ; } || exit
 	for i in "${WIRELESS_INTERFACES[@]}"; do WIRELESS_INTERFACES_PRODUCT+=("$(nmcli -f general.product device show "$i" | awk '{print $2}')"); done
