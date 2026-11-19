@@ -15,18 +15,12 @@ cp ~/.config/hypr/lid-monitor.template.conf ~/.config/hypr/lid-monitor.local.con
 
 If `XDG_CONFIG_HOME` is set, use its `hypr` directory instead of `~/.config/hypr`.
 
-Create the link used by the Hyprland bindings (adjust the source path if the
-repository is elsewhere):
+The Hyprland bindings invoke the script directly from `~/.dotfiles/bin`, so no
+link in `/usr/local/bin` is needed. To test manually:
 
 ```bash
-sudo ln -s "$HOME/.dotfiles/bin/lid-monitor.sh" /usr/local/bin/lid-monitor.sh
-```
-
-Then reload Hyprland with `hyprctl reload`. To test manually:
-
-```bash
-/usr/local/bin/lid-monitor.sh close
-/usr/local/bin/lid-monitor.sh open
+~/.dotfiles/bin/lid-monitor.sh close
+~/.dotfiles/bin/lid-monitor.sh open
 ```
 
 The only accepted arguments are `close` and `open`. The first saves the IDs of

@@ -76,8 +76,8 @@ hl.on("hyprland.start", function()
 end)
 
 -- Move workspaces between the laptop and external display when the lid changes.
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("/usr/local/bin/lid-monitor.sh close"))
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("/usr/local/bin/lid-monitor.sh open"))
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("~/.dotfiles/bin/lid-monitor.sh close"))
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("~/.dotfiles/bin/lid-monitor.sh open"))
 
 local mod = "SUPER"
 local magic = "CTRL + SHIFT"
