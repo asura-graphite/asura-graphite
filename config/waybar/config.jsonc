@@ -4,7 +4,7 @@
 	"height": 38,
 	"spacing": 6,
 	"reload_style_on_change": true,
-	"modules-left": ["hyprland/workspaces"],
+	"modules-left": ["hyprland/workspaces", "backlight", "power-profiles-daemon", "battery"],
 	"modules-center": [
 		"clock"
 	],
@@ -15,9 +15,6 @@
 		"hyprland/language",
 		"bluetooth",
 		"pulseaudio",
-		"backlight",
-		"power-profiles-daemon",
-		"battery",
 		"tray",
 		"temperature",
 		"custom/notification",
