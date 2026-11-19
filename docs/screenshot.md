@@ -1,11 +1,11 @@
 # `config/satty/screenshot.sh`
 
 Captures a selected screen region and opens the result in Satty. The Hyprland
-shortcut is `SUPER + S`; the command is `screenshot.sh` when the script is
-available on `PATH`.
+shortcut is `SUPER + S`; Hyprland runs the script directly from the dotfiles
+repository.
 
 ```bash
-~/.config/satty/screenshot.sh
+~/.dotfiles/config/satty/screenshot.sh
 ```
 
 It takes no options.
