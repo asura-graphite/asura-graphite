@@ -107,6 +107,10 @@ hl.bind(mod .. " + T", hl.dsp.layout("togglesplit"))
 -- Screenshot
 hl.bind(mod .. " + S", hl.dsp.exec_cmd("~/.dotfiles/config/satty/screenshot.sh"))
 
+-- Laptop screen brightness keys.
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
+
 -- Display
 for i = 1, 9 do
 	-- Change workspace -> SUPER + <number>

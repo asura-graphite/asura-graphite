@@ -15,6 +15,8 @@
 		"hyprland/language",
 		"bluetooth",
 		"pulseaudio",
+		"backlight",
+		"power-profiles-daemon",
 		"battery",
 		"tray",
 		"temperature",
@@ -68,6 +70,20 @@
     		"format": "󰗅  VOL {volume}%",
     		"format-muted": "MUTE",
     		"on-click": "pavucontrol"
+	},
+	"backlight": {
+		"format": "󰃠  {percent}%",
+		"tooltip-format": "Brillo: {percent}%"
+	},
+	"power-profiles-daemon": {
+		"format": "{icon}  {profile}",
+		"tooltip-format": "Perfil de energía: {profile}\nClic para cambiar",
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
 	},
 	"battery": {
 		"interval": 30,

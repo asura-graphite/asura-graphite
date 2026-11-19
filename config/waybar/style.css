@@ -24,6 +24,8 @@ window#waybar {
 #network,
 #language,
 #bluetooth,
+#backlight,
+#power-profiles-daemon,
 #battery,
 #temperature,
 #pulseaudio,
@@ -74,6 +76,8 @@ window#waybar {
 #cpu,
 #memory,
 #network,
+#backlight,
+#power-profiles-daemon,
 #battery,
 #pulseaudio {
     color: #b0b4ba;
