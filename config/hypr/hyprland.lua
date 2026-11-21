@@ -75,11 +75,23 @@ hl.config({
 	},
 })
 
+-- Customized by Asura Developer: keep Toolbox centered.
+hl.window_rule({
+	name = "center-jetbrains-toolbox",
+	match = { class = "^jetbrains-toolbox$" },
+	float = true,
+	center = true,
+})
+
 -- Hyperland | On start
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("swaybg -i ~/Pictures/Wallpapers/wallpaper-1.png -m fill")
-	hl.exec_cmd("swaync")
+	-- Warning: avoid duplicate starts; check `systemctl --user status swaync.service`.
+	-- SwayNC can also be activated through D-Bus, even if the service is disabled.
+	-- Enable or disable session startup with `systemctl --user enable|disable swaync.service`.
+	-- Service definition: /usr/lib/systemd/user/swaync.service (managed by the package).
+	-- hl.exec_cmd("swaync")
 end)
 
 -- Move workspaces between the laptop and external display when the lid changes.

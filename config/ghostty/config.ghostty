@@ -58,7 +58,7 @@ window-padding-x = 12
 window-padding-balance = true
 window-padding-y = 8
 
-background-opacity = 1
+background-opacity = 0.85
 
 cursor-color = #b9bec5
 
@@ -68,5 +68,4 @@ foreground = #d8dadd
 selection-background = #34373d
 selection-foreground = #ffffff
 
-background-blur = false
-
+background-blur = true
